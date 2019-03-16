@@ -52,3 +52,13 @@ with open(csvpath, newline='') as csvfile:
     print("Average  Change: $"+str(monthly_avg))
     print("Greatest Increase in Profits: " + str(max_month) + " ($"+str(max_value)+")")
     print("Greatest Decrease in Profits: " + str(min_month) + " ($"+str(min_value)+")")
+
+    filepath = os.path.join( "PyBank_Output.txt")
+    with open(filepath,'w') as text:
+        text.write("Financial Analysis" + "\n")
+        text.write("----------------------------------------" + "\n")
+        text.write(f"Total Months: {counter}" + "\n")
+        text.write(f"Total Revenue: ${total_PL}" + "\n")
+        text.write(f"Average Revenue Change: ${monthly_avg}" + "\n")
+        text.write(f"Greatest Increase in Revenue: {max_month} (${max_value})" + "\n")
+        text.write(f"Greatest Decrease in Revenue: {min_month} (${min_value})" + "\n")
